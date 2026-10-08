@@ -1,0 +1,9 @@
+# Line endings: LF everywhere. The shell scripts (`mc`, `install.sh`) must stay LF even where core.autocrlf is on,
+# or `sh` refuses to run them ("bad interpreter: /bin/sh^M").
+* text=auto eol=lf
+*.sh text eol=lf
+mc text eol=lf
+
+# Generated files: collapsed in diffs and ignored by language statistics.
+uv.lock linguist-generated=true -diff
+docs/COMMANDS.md linguist-generated=true

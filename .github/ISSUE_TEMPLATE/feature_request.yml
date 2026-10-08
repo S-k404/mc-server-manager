@@ -1,0 +1,34 @@
+name: Feature request
+description: An idea for something mc should do
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please look through the [open issues](https://github.com/S-k404/mc-server-manager/issues) first: it may already be asked for.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the situation, not the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like mc to do?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What do you do today instead?
+  - type: dropdown
+    id: system
+    attributes:
+      label: Which systems matter for this?
+      multiple: true
+      options:
+        - macOS
+        - Linux
+        - Both

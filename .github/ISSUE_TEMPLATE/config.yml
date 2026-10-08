@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security problem
+    url: https://github.com/S-k404/mc-server-manager/security/advisories/new
+    about: Please report vulnerabilities privately, not in a public issue.
+  - name: Read the docs first
+    url: https://github.com/S-k404/mc-server-manager#readme
+    about: Install steps, the everyday commands, and links to the guides.

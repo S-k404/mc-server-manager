@@ -1,0 +1,52 @@
+name: Bug report
+description: Something does not work, or works differently from what the docs say
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Please fill in what you can; the system line and the steps matter most.
+        For a security problem, do **not** use this form: see the security policy.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you run, what did you expect, and what did you get instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. mc create t --loader vanilla
+        2. mc start
+        3. ...
+  - type: input
+    id: version
+    attributes:
+      label: Your system
+      description: The operating system and its version, and the Python version (`python3 --version`), or the first lines of `mc support`.
+      placeholder: "Ubuntu 24.04, Python 3.12.3"
+    validations:
+      required: true
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: Where does the server run?
+      options:
+        - Natively (tmux)
+        - In Docker (mc runtime docker)
+        - On a VPS (mc -r / mc deploy)
+        - Not about a server
+  - type: textarea
+    id: support
+    attributes:
+      label: Output of `mc support` (optional)
+      description: It strips passwords, keys and addresses, but please read it before pasting.
+      render: shell
+  - type: textarea
+    id: logs
+    attributes:
+      label: Anything else
+      description: The last lines of `logs/mc-errors.log`, screenshots, what you already tried.
