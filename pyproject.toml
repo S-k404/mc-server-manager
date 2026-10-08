@@ -37,7 +37,7 @@ Changelog = "https://github.com/S-k404/mc-server-manager/blob/main/CHANGELOG.md"
 dev = [
     "pytest>=9.1,<10",
     "pytest-rerunfailures>=16",
-    "ruff>=0.15,<0.16",
+    "ruff>=0.16.10,<0.17",
 ]
 
 [tool.uv]
