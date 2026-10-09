@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+      - name: The lockfile is current
+        run: uv lock --check
+      - name: Ruff
+        run: uv run --locked ruff check .
+      - name: Shellcheck (the launcher and the installer are POSIX sh)
+        run: shellcheck -s sh mc install.sh
+
+  test:
+    name: Test (${{ matrix.name }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: "Ubuntu, Python 3.12", os: ubuntu-latest, python: "3.12" }
+          - { name: "Ubuntu, Python 3.13", os: ubuntu-latest, python: "3.13" }
+          - { name: "Ubuntu, Python 3.14", os: ubuntu-latest, python: "3.14" }
+          - { name: "macOS, Python 3.14", os: macos-latest, python: "3.14" }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: ${{ matrix.python }}
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --locked
+      # The dashboard tests drive a real terminal interface against deadlines that a slow shared runner can miss. A failing test is re-run up to
+      # twice; a real bug fails all three times. Locally the suite runs strict: `uv run pytest -q`.
+      - name: "Tests (offline: no tmux, Java or Docker needed)"
+        run: uv run --locked pytest -q --reruns 2 --reruns-delay 1

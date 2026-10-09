@@ -1,0 +1,30 @@
+# Only the tool is versioned. Worlds, backups, secrets and runtime state stay out.
+
+# Servers, worlds, backups, downloaded Java: never versioned (convention: worlds are moved aside, never deleted)
+/servers/
+/backups/
+/runtime/
+
+# Secrets: ProtonVPN WireGuard key, cached public address
+/tunnel/
+
+# Per-machine state written by mc and the agent (settings can hold a Discord webhook and remote hosts)
+/.mc-*
+/logs/
+
+# Python / tooling
+/.venv/
+__pycache__/
+*.pyc
+/.pytest_cache/
+/.ruff_cache/
+/dist/
+*.egg-info/
+
+# Editor / OS / Claude Code local settings (CLAUDE.local.md: notes about one machine or person, never committed)
+.DS_Store
+/.claude/settings.local.json
+/CLAUDE.local.md
+.idea/
+.vscode/
+*.swp
