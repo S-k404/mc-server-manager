@@ -1,3 +1,12 @@
+<!-- datasheet:banner -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.svg">
+    <img src=".github/assets/banner-light.svg" alt="mc-server-manager: Run Minecraft servers on your own computer from one command and a terminal dashboard. It never deletes a world." width="100%">
+  </picture>
+</p>
+<!-- /datasheet:banner -->
+
 <div align="center">
 
 # mc-server-manager
@@ -19,6 +28,17 @@
 It downloads and checks everything a server needs, keeps each server in its own `tmux` session, installs mods from Modrinth,
 makes backups it can verify, restarts what crashes, and helps your friends get in. You use it from the command line, or from a
 full-screen dashboard in the same terminal.
+
+<!-- datasheet:figure -->
+## At a glance
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/diagram-dark.svg">
+    <img src=".github/assets/diagram-light.svg" alt="Block diagram: from command to running server" width="100%">
+  </picture>
+</p>
+<!-- /datasheet:figure -->
 
 ## What it does
 
