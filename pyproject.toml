@@ -22,7 +22,7 @@ classifiers = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "typer>=0.27,<0.28",
+    "typer>=0.27.3,<0.28",
     "rich>=15,<16",
     "textual>=8.2,<9",
     "psutil>=7.2,<8",
@@ -35,7 +35,7 @@ Changelog = "https://github.com/S-k404/mc-server-manager/blob/main/CHANGELOG.md"
 
 [dependency-groups]
 dev = [
-    "pytest>=9.1,<10",
+    "pytest>=9.2.0,<10",
     "pytest-rerunfailures>=16",
     "pytest-timeout>=2.4",
     "ruff>=0.15,<0.16",
