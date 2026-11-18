@@ -38,6 +38,14 @@ full-screen dashboard in the same terminal.
     <img src=".github/assets/diagram-light.svg" alt="Block diagram: from command to running server" width="100%">
   </picture>
 </p>
+
+| Characteristic | Detail |
+| --- | --- |
+| **Interfaces** | `mc` Typer CLI and full-screen Textual TUI dashboard (`mc dashboard`) for local Paper, Fabric, Vanilla and Forge servers |
+| **Safety** | Never deletes a world: automatic pre-upgrade and scheduled tar backups (`backups/`) with checksum verification |
+| **Runtimes** | Native Java in detached `tmux` sessions (`mc-<name>`) or isolated Docker containers with RCON console attach |
+| **Networking** | Three share modes (`hidden` loopback, `local` Wi-Fi, `internet` ProtonVPN port-forward + Simple Voice Chat UDP) |
+| **Diagnostics** | Built-in `moddoctor`, multiplayer status-ping `speedtest`, and hop-by-hop VPN forwarder `trace` |
 <!-- /datasheet:figure -->
 
 ## What it does
@@ -169,3 +177,13 @@ Minecraft is a trademark of Mojang Synergies AB.
 ## License
 
 [MIT](LICENSE)
+
+<!-- datasheet:footer -->
+---
+
+<p align="center">
+  <a href="https://github.com/S-k404/pi5-homelab-rack">&larr; U18 pi5-homelab-rack</a> &middot;
+  <a href="https://github.com/S-k404/S-k404">SK-404 index</a> &middot;
+  <a href="https://github.com/S-k404/openfoam-mac-suite">U21 openfoam-mac-suite &rarr;</a>
+</p>
+<!-- /datasheet:footer -->
