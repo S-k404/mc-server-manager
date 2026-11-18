@@ -82,7 +82,7 @@ def pretend_running():
     core.Server.listening = lambda self, timeout=1.5: self.name == "survival"
     core.Server.accepting = lambda self: self.name == "survival"
     players.online = lambda s: ["Alex", "Sam", "Jordan"] if s.name == "survival" else []
-    platform.lan_ip = lambda: "192.168.1.20"
+    platform.lan_ip = lambda: "192.0.2.20"
     agent.agent_installed = lambda: True
     agent.heartbeat_age = lambda: 6.0
 

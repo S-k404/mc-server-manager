@@ -122,7 +122,7 @@ def test_a_server_in_docker_says_it_cannot_see_connections(make_server, monkeypa
 
 def test_where_and_quality_words():
     assert sp.where("127.0.0.1") == "this Mac" and sp.where("::1") == "this Mac"
-    assert sp.where("10.0.0.7") == "same network" and sp.where("192.168.1.9") == "same network"
+    assert sp.where("10.0.0.7") == "same network" and sp.where("192.0.2.9") == "same network"
     assert sp.where("172.17.0.3") == "Docker / VPN forwarder" and sp.where("8.8.8.8") == "internet"
     assert [sp.quality(x) for x in (10, 45, 80, 150, 400)] == ["excellent", "good", "okay", "laggy", "very laggy"]
 

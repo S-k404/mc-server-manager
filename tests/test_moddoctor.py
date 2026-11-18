@@ -591,7 +591,7 @@ def test_blank_bind_address_follows_server_ip(make_server):
     assert bad.level == "error" and "only listens on 127.0.0.1" in bad.message and "nobody else can reach it" in bad.message
     assert "bind_address=*" in bad.steps[0]
     lan = voice_server(make_server, {"bind_address": ""}, name="b")
-    lan.set_prop("server-ip", "192.168.1.5")
+    lan.set_prop("server-ip", "192.0.2.5")
     assert voice(moddoctor.check(lan), "voicechat")[0].level == "warn"
     star = voice_server(make_server, {"bind_address": "*"}, name="c")
     star.set_prop("server-ip", "127.0.0.1")

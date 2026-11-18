@@ -102,9 +102,9 @@ def test_local_mode_gives_the_wifi_back_but_never_overrides_a_deliberate_address
     mode("local")
     share.apply_bind(s)
     assert s.prop("server-ip") == ""                                    # mc's own loopback bind is undone
-    chosen = make_server("b", props={"server-ip": "192.168.1.50"})
+    chosen = make_server("b", props={"server-ip": "192.0.2.50"})
     share.apply_bind(chosen)
-    assert chosen.prop("server-ip") == "192.168.1.50"                   # somebody set this on purpose
+    assert chosen.prop("server-ip") == "192.0.2.50"                   # somebody set this on purpose
     mode("hidden")
     share.apply_bind(chosen)
     assert chosen.prop("server-ip") == "127.0.0.1"                      # hidden has to win: it is the whole point

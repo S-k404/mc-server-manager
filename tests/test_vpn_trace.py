@@ -568,7 +568,7 @@ def test_accepted_ports_can_tell_udp_from_tcp():
 
 
 # ---------- the three share modes: the trace must never show this Mac's Wi-Fi address ----------
-WIFI = "192.168.1.77"
+WIFI = "192.0.2.77"
 
 
 @pytest.mark.parametrize("mode", ["hidden", "local", None])
